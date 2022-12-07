@@ -31,7 +31,6 @@ This is a CMS-style blog site similar to a Wordpress site, where developers can 
   
   In the terminal of VS Code please install the following npm packages: 
   ```bash
-npm i init -y
 npm i
 npm i bcrypt
 npm i connect-session-sequelize
@@ -39,10 +38,7 @@ npm i dotenv
 npm i express
 npm i express-handlebars
 npm i express-session
-npm i handlebars
-npm i inquirer
 npm i mysql2
-npm i nodemon
 npm i sequelize
   ```
 
