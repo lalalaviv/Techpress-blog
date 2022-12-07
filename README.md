@@ -16,7 +16,7 @@ This is a CMS-style blog site similar to a Wordpress site, where developers can 
   - [User Story](#user-story)
   - [Acceptance Criteria](#acceptance-criteria)
   - [Technology](#technology)
-  - [Demonstration](#demonstration)
+  - [Mock-Up](#mock-up)
   - [License](#license)
   - [Questions](#questions)
   - [Credits](#credits)
@@ -121,11 +121,10 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 * [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
 
 
-## Demonstration
+## Mock-Up
 
-The following animation demonstrates the application functionality:
+The following image shows the web application's appearance and functionality:
 
-![Animation cycles through signing into the app, clicking on buttons, and updating blog posts.](./Assets/14-mvc-homework-demo-01.gif) 
 
 
 ## License 
