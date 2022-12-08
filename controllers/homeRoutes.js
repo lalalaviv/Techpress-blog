@@ -2,10 +2,10 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
     console.log(req.session);
-    
-    Post.findAll({
+    try {
+      const dbPostData = await Post.findAll({
       attributes: [
         'id',
         'title',
@@ -27,18 +27,17 @@ router.get('/', (req, res) => {
         }
       ]
     })
-      .then(dbPostData => {
         const posts = dbPostData.map(post => post.get({ plain: true }));
         res.render('homepage', {
             posts,
             loggedIn: req.session.loggedIn
           });
-      })
-      .catch(err => {
+      } catch(err) {
         console.log(err);
         res.status(500).json(err);
-      });
-  });
+      }
+    });
+  
 
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
@@ -58,8 +57,9 @@ router.get('/login', (req, res) => {
     res.render('signup');
   });
 
-  router.get('/post/:id', (req, res) => {
-    Post.findOne({
+  router.get('/post/:id', async (req, res) => {
+    try {
+      const dbPostData = await Post.findOne({
       where: {
         id: req.params.id
       },
@@ -84,7 +84,6 @@ router.get('/login', (req, res) => {
         }
       ]
     })
-      .then(dbPostData => {
         if (!dbPostData) {
           res.status(404).json({ message: 'No post found with this id' });
           return;
@@ -98,11 +97,11 @@ router.get('/login', (req, res) => {
             post,
             loggedIn: req.session.loggedIn
           });
-      })
-      .catch(err => {
+      } catch(err){
         console.log(err);
         res.status(500).json(err);
-      });
-});
+      }
+    });
+
 
 module.exports = router;

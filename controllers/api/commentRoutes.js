@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Comment= require('../../models/comment');
+const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -13,7 +13,6 @@ router.get('/', async (req, res) => {
     });
 
 router.post('/', withAuth, async (req, res) => {
-  // check the session
   try {
     const dbCommentData = await Comment.create({
       comment_text: req.body.comment_text,
