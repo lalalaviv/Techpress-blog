@@ -49,12 +49,11 @@ npm i sequelize
  The application will be invoked by using the following command:
 
   ```bash
-  node index.js
+  node seeds/seed.js
+  node server.js
   ```
   Then in your preferred browser open  http://localhost:3000
 
-  Alternatively the deployed appliaction can be tested on Heroku: 
-  [Techpress-Blog](http://)
 
 ## User Story
 
@@ -120,11 +119,12 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 ## Mock-Up
 
 The following image shows the web application's appearance and functionality:
+![The Techpress homepage](./Assets/mockup.png)
 
 
 
 ## License 
-![License](https://img.shields.io/github/license/andrew60199/techpress-blog)
+![License](https://img.shields.io/github/license/lalalaviv/techpress-blog)
 
 ## Questions
 
