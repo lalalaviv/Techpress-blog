@@ -54,6 +54,9 @@ npm i sequelize
   ```
   Then in your preferred browser open  http://localhost:3000
 
+  Alternatively, click the following in the access the deployed application:
+  https://lalalaviv.github.io/Techpress-blog/
+
 
 ## User Story
 
